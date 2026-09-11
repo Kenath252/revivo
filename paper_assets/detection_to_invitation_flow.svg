@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Revitalisation detection to invitation flow</title>
+  <desc id="desc">Flow diagram showing how heart features, personalised baseline checks, desk and calendar context, and cooldown gates lead to either a robotic interaction invitation or a baseline break notification.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 28px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #102033; }
+      .subtitle { font: 400 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #526173; }
+      .section { font: 700 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; letter-spacing: .6px; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.6; rx: 12; }
+      .boxBlue { fill: #eff6ff; stroke: #93c5fd; stroke-width: 1.8; rx: 12; }
+      .boxGreen { fill: #ecfdf5; stroke: #86efac; stroke-width: 1.8; rx: 12; }
+      .boxAmber { fill: #fffbeb; stroke: #fcd34d; stroke-width: 1.8; rx: 12; }
+      .boxRed { fill: #fef2f2; stroke: #fca5a5; stroke-width: 1.8; rx: 12; }
+      .boxPurple { fill: #f5f3ff; stroke: #c4b5fd; stroke-width: 1.8; rx: 12; }
+      .diamond { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.8; }
+      .diamondGreen { fill: #ecfdf5; stroke: #22c55e; stroke-width: 2; }
+      .diamondAmber { fill: #fffbeb; stroke: #f59e0b; stroke-width: 2; }
+      .heading { font: 700 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .text { font: 400 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+      .small { font: 400 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .mono { font: 700 12px "SFMono-Regular", Consolas, monospace; fill: #1e293b; }
+      .label { font: 700 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+      .yes { font: 700 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #15803d; }
+      .no { font: 700 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #b91c1c; }
+      .arrow { fill: none; stroke: #64748b; stroke-width: 2.4; marker-end: url(#arrow); }
+      .arrowGreen { fill: none; stroke: #16a34a; stroke-width: 2.8; marker-end: url(#arrowGreen); }
+      .arrowRed { fill: none; stroke: #dc2626; stroke-width: 2.4; marker-end: url(#arrowRed); }
+      .arrowDash { fill: none; stroke: #94a3b8; stroke-width: 2.2; stroke-dasharray: 7 6; marker-end: url(#arrow); }
+      .suppressed { fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 1.5; rx: 10; }
+      .iconCircle { fill: #e0f2fe; stroke: #38bdf8; stroke-width: 1.4; }
+      .badge { fill: #0f172a; rx: 8; }
+      .badgeText { font: 700 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #ffffff; letter-spacing: .4px; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" />
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a" />
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc2626" />
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1500" height="1000" />
+
+  <text class="title" x="54" y="54">Detection-to-invitation process</text>
+  <text class="subtitle" x="54" y="82">From continuous heart sensing and context checks to a robotic interaction invitation or a baseline break notification.</text>
+
+  <text class="section" x="54" y="132">INPUT STREAMS</text>
+  <text class="section" x="438" y="132">PHYSIOLOGICAL DETECTION</text>
+  <text class="section" x="825" y="132">SAFETY AND CONTEXT GATES</text>
+  <text class="section" x="1195" y="132">INVITATION OUTPUT</text>
+
+  <!-- Inputs -->
+  <rect class="boxBlue" x="54" y="155" width="310" height="100" />
+  <circle class="iconCircle" cx="86" cy="194" r="18" />
+  <path d="M 75 194 C 80 181, 87 207, 93 194 S 104 194, 109 183" fill="none" stroke="#0369a1" stroke-width="3" stroke-linecap="round" />
+  <text class="heading" x="122" y="185">Heart data stream</text>
+  <text class="text" x="122" y="208">HR and fresh HRV samples from watch</text>
+  <text class="small" x="122" y="230">Processed when detection is enabled</text>
+
+  <rect class="boxBlue" x="54" y="280" width="310" height="100" />
+  <text class="heading" x="82" y="312">Personalised baseline profile</text>
+  <text class="text" x="82" y="335">Feature means, standard deviations, ranges</text>
+  <text class="small" x="82" y="357">Created from neutral SEQ-linked windows</text>
+
+  <rect class="boxBlue" x="54" y="405" width="310" height="100" />
+  <text class="heading" x="82" y="437">Desk and calendar context</text>
+  <text class="text" x="82" y="460">Desk-work status, current bout time</text>
+  <text class="small" x="82" y="482">Meeting status used as an availability gate</text>
+
+  <!-- Physiological processing -->
+  <rect class="box" x="430" y="155" width="320" height="105" />
+  <text class="heading" x="460" y="187">Create heart feature windows</text>
+  <text class="text" x="460" y="212">20 s window, 10 s step</text>
+  <text class="mono" x="460" y="236">hrMean, hrvMean/sdnnProxy, hrSlope</text>
+
+  <path class="arrow" d="M 364 205 L 420 205" />
+  <path class="arrowDash" d="M 364 330 C 405 330, 395 235, 420 224" />
+
+  <rect class="box" x="430" y="300" width="320" height="125" />
+  <text class="heading" x="460" y="332">Compare with personal baseline</text>
+  <text class="text" x="460" y="356">Convert feature values to oriented z-scores</text>
+  <text class="text" x="460" y="380">Calculate composite score</text>
+  <text class="small" x="460" y="404">Lower composite indicates lower activation</text>
+
+  <path class="arrow" d="M 590 260 L 590 290" />
+
+  <g transform="translate(590 502)">
+    <polygon class="diamondGreen" points="0,-82 120,0 0,82 -120,0" />
+    <text class="heading" x="-66" y="-22">Physiological</text>
+    <text class="heading" x="-48" y="0">gate passed?</text>
+    <text class="small" x="-78" y="24">Composite threshold</text>
+    <text class="small" x="-66" y="43">+ low envelope</text>
+    <text class="small" x="-58" y="62">+ low-strain guard</text>
+  </g>
+
+  <path class="arrow" d="M 590 425 L 590 414" />
+  <path class="arrow" d="M 590 425 L 590 410" />
+  <path class="arrow" d="M 590 425 L 590 414" />
+  <path class="arrow" d="M 590 425 L 590 412" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 410" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 414" opacity="0" />
+  <path class="arrow" d="M 590 425 L 590 420" />
+
+  <rect class="boxAmber" x="430" y="625" width="320" height="105" />
+  <text class="heading" x="460" y="657">Alternative time-based trigger</text>
+  <text class="text" x="460" y="681">Current desk bout reaches 120 minutes</text>
+  <text class="small" x="460" y="704">Can trigger even without low physiology</text>
+
+  <path class="arrowDash" d="M 364 455 C 410 455, 390 675, 420 675" />
+
+  <rect class="suppressed" x="54" y="555" width="310" height="96" />
+  <text class="heading" x="82" y="587">No invitation yet</text>
+  <text class="text" x="82" y="610">If no baseline/window or threshold fails,</text>
+  <text class="text" x="82" y="632">the system continues monitoring.</text>
+
+  <path class="arrowRed" d="M 470 502 C 410 502, 392 603, 374 603" />
+  <text class="no" x="428" y="528">NO</text>
+
+  <!-- Consecutive detections and trigger merge -->
+  <rect class="boxGreen" x="815" y="190" width="320" height="110" />
+  <text class="heading" x="845" y="222">Require repeated evidence</text>
+  <text class="text" x="845" y="246">Physiological gate must pass repeatedly</text>
+  <text class="mono" x="845" y="270">5 consecutive detections</text>
+
+  <path class="arrowGreen" d="M 710 502 C 775 502, 765 245, 805 245" />
+  <text class="yes" x="730" y="480">YES</text>
+
+  <rect class="boxGreen" x="815" y="355" width="320" height="105" />
+  <text class="heading" x="845" y="387">Revitalisation required</text>
+  <text class="text" x="845" y="411">Trigger reason is recorded</text>
+  <text class="mono" x="845" y="435">lowActivationLowStrain or prolongedDeskBout</text>
+
+  <path class="arrowGreen" d="M 975 300 L 975 345" />
+  <path class="arrowGreen" d="M 750 677 C 785 677, 785 408, 805 408" />
+
+  <!-- Gates -->
+  <g transform="translate(975 582)">
+    <polygon class="diamondAmber" points="0,-80 115,0 0,80 -115,0" />
+    <text class="heading" x="-53" y="-22">Cooldowns</text>
+    <text class="heading" x="-41" y="0">clear?</text>
+    <text class="small" x="-74" y="25">5 min notification</text>
+    <text class="small" x="-75" y="44">25 min accepted-break</text>
+    <text class="small" x="-66" y="63">8/15/25 min retry</text>
+  </g>
+
+  <path class="arrow" d="M 975 460 L 975 492" />
+
+  <g transform="translate(975 785)">
+    <polygon class="diamondAmber" points="0,-80 115,0 0,80 -115,0" />
+    <text class="heading" x="-51" y="-18">Available</text>
+    <text class="heading" x="-47" y="4">for break?</text>
+    <text class="small" x="-76" y="30">working at desk</text>
+    <text class="small" x="-68" y="50">not in meeting</text>
+  </g>
+
+  <path class="arrowGreen" d="M 975 662 L 975 695" />
+  <text class="yes" x="995" y="686">YES</text>
+
+  <rect class="suppressed" x="1165" y="548" width="270" height="84" />
+  <text class="heading" x="1192" y="581">Invitation suppressed</text>
+  <text class="text" x="1192" y="604">Cooldown or retry delay is active.</text>
+
+  <path class="arrowRed" d="M 1090 582 L 1155 582" />
+  <text class="no" x="1120" y="570">NO</text>
+
+  <rect class="suppressed" x="1165" y="750" width="270" height="90" />
+  <text class="heading" x="1192" y="782">Invitation suppressed</text>
+  <text class="text" x="1192" y="805">Participant is not at desk</text>
+  <text class="text" x="1192" y="826">or is in a meeting.</text>
+
+  <path class="arrowRed" d="M 1090 785 L 1155 795" />
+  <text class="no" x="1121" y="772">NO</text>
+
+  <!-- Output -->
+  <rect class="boxPurple" x="1180" y="165" width="265" height="110" />
+  <rect class="badge" x="1206" y="188" width="95" height="22" />
+  <text class="badgeText" x="1218" y="204">INTERACTION</text>
+  <text class="heading" x="1206" y="232">Robot nudge sequence</text>
+  <text class="text" x="1206" y="255">Guard, idle, pre-punch, dodge, guard</text>
+
+  <rect class="boxPurple" x="1180" y="315" width="265" height="125" />
+  <text class="heading" x="1206" y="347">Robot invitation window</text>
+  <text class="text" x="1206" y="371">30 s acceptance window</text>
+  <text class="text" x="1206" y="394">Accept by holding hand at ToF</text>
+  <text class="mono" x="1206" y="417">interactionInvitation logged</text>
+
+  <rect class="boxAmber" x="1180" y="475" width="265" height="115" />
+  <rect class="badge" x="1206" y="498" width="73" height="22" />
+  <text class="badgeText" x="1218" y="514">BASELINE</text>
+  <text class="heading" x="1206" y="542">Phone/watch notification</text>
+  <text class="text" x="1206" y="566">Prompt to take an active break</text>
+
+  <path class="arrowGreen" d="M 1038 728 C 1115 660, 1120 382, 1170 382" />
+  <text class="yes" x="1053" y="709">YES</text>
+  <path class="arrowGreen" d="M 1135 408 C 1160 365, 1160 244, 1170 225" />
+  <path class="arrow" d="M 1312 275 L 1312 305" />
+
+  <path class="arrowDash" d="M 1135 408 C 1160 425, 1160 520, 1170 532" />
+
+  <text class="small" x="1210" y="635">Output depends on selected response mode:</text>
+  <text class="mono" x="1210" y="658">interaction -> robot invitation</text>
+  <text class="mono" x="1210" y="681">baseline -> break notification</text>
+
+  <!-- Footer note -->
+  <rect class="box" x="54" y="900" width="1391" height="60" />
+  <text class="heading" x="82" y="926">Logged measures</text>
+  <text class="text" x="82" y="948">Heart feature windows are saved continuously. When an invitation is issued, the system logs the trigger path and the subsequent invitation/response event.</text>
+</svg>

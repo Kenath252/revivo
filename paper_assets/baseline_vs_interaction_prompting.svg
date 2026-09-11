@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">Baseline versus interaction prompting</title>
+  <desc id="desc">Side-by-side comparison of baseline notification prompting and robot-mediated interaction prompting after the same revitalisation detection process.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .common { fill: #ecfdf5; stroke: #86efac; stroke-width: 2; rx: 16; }
+      .baseline { fill: #fffbeb; stroke: #facc15; stroke-width: 2; rx: 16; }
+      .interaction { fill: #f5f3ff; stroke: #a78bfa; stroke-width: 2; rx: 16; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.6; rx: 12; }
+      .outcome { fill: #fff7ed; stroke: #fdba74; stroke-width: 1.8; rx: 12; }
+      .heading { font: 700 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .laneTitle { font: 700 22px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .text { font: 400 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+      .small { font: 400 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #64748b; }
+      .mono { font: 700 12px "SFMono-Regular", Consolas, monospace; fill: #1e293b; }
+      .chip { fill: #0f172a; rx: 8; }
+      .chipText { font: 700 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #fff; letter-spacing: .5px; }
+      .arrow { fill: none; stroke: #64748b; stroke-width: 2.5; marker-end: url(#arrow); }
+      .arrowAmber { fill: none; stroke: #d97706; stroke-width: 2.8; marker-end: url(#arrowAmber); }
+      .arrowPurple { fill: none; stroke: #7c3aed; stroke-width: 2.8; marker-end: url(#arrowPurple); }
+      .arrowGreen { fill: none; stroke: #16a34a; stroke-width: 2.8; marker-end: url(#arrowGreen); }
+      .dash { fill: none; stroke: #94a3b8; stroke-width: 2.2; stroke-dasharray: 7 6; marker-end: url(#arrow); }
+      .splitLine { stroke: #cbd5e1; stroke-width: 2; stroke-dasharray: 8 8; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" /></marker>
+    <marker id="arrowAmber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706" /></marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed" /></marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a" /></marker>
+  </defs>
+
+  <rect class="bg" width="1500" height="900" />
+  <text class="title" x="56" y="56">Baseline versus robot-mediated interaction prompting</text>
+  <text class="subtitle" x="56" y="84">Both conditions use the same detection logic; the experimental difference is how the break invitation is delivered and accepted.</text>
+
+  <rect class="common" x="360" y="125" width="780" height="115" />
+  <text class="heading" x="390" y="162">Shared detection stage</text>
+  <text class="text" x="390" y="187">Personalised heart-feature detector + prolonged desk-bout trigger</text>
+  <text class="text" x="390" y="210">Cooldowns, desk-work gate, and calendar availability gate must pass</text>
+  <text class="mono" x="860" y="188">revitalisationRequired</text>
+
+  <path class="arrowGreen" d="M 750 240 L 750 282" />
+  <line class="splitLine" x1="750" y1="280" x2="750" y2="820" />
+
+  <!-- Baseline lane -->
+  <rect class="baseline" x="70" y="300" width="625" height="500" />
+  <rect class="chip" x="100" y="330" width="82" height="22" />
+  <text class="chipText" x="112" y="346">BASELINE</text>
+  <text class="laneTitle" x="100" y="382">Notification-only prompt</text>
+
+  <rect class="box" x="115" y="420" width="230" height="92" />
+  <text class="heading" x="140" y="454">Break notification</text>
+  <text class="text" x="140" y="478">Phone/watch prompt appears</text>
+  <text class="mono" x="140" y="498">baselineBreakNotification</text>
+
+  <path class="arrowAmber" d="M 355 466 L 410 466" />
+
+  <rect class="box" x="420" y="420" width="230" height="92" />
+  <text class="heading" x="445" y="454">Participant response</text>
+  <text class="text" x="445" y="478">Accept, reject, or timeout</text>
+  <text class="mono" x="445" y="498">baselineBreakResponse</text>
+
+  <path class="arrowAmber" d="M 535 512 L 535 560" />
+
+  <rect class="outcome" x="145" y="570" width="190" height="105" />
+  <text class="heading" x="170" y="604">Accepted</text>
+  <text class="text" x="170" y="628">Self-directed</text>
+  <text class="text" x="170" y="650">active break begins</text>
+
+  <rect class="outcome" x="382" y="570" width="225" height="105" />
+  <text class="heading" x="407" y="604">Rejected / timed out</text>
+  <text class="text" x="407" y="628">No break starts</text>
+  <text class="text" x="407" y="650">Retry delay is applied</text>
+
+  <path class="dash" d="M 535 560 C 475 545, 330 545, 240 560" />
+  <path class="dash" d="M 535 560 C 555 552, 558 552, 495 560" />
+
+  <rect class="box" x="220" y="705" width="325" height="65" />
+  <text class="heading" x="245" y="734">Post-break data</text>
+  <text class="text" x="245" y="756">Timer duration, questionnaire, daily counts</text>
+
+  <!-- Interaction lane -->
+  <rect class="interaction" x="805" y="300" width="625" height="500" />
+  <rect class="chip" x="835" y="330" width="102" height="22" />
+  <text class="chipText" x="847" y="346">INTERACTION</text>
+  <text class="laneTitle" x="835" y="382">Embodied robot prompt</text>
+
+  <rect class="box" x="850" y="420" width="210" height="92" />
+  <text class="heading" x="875" y="454">Robot nudge</text>
+  <text class="text" x="875" y="478">Visible embodied cue</text>
+  <text class="small" x="875" y="498">guard, idle, pre-punch, dodge</text>
+
+  <path class="arrowPurple" d="M 1070 466 L 1125 466" />
+
+  <rect class="box" x="1135" y="420" width="240" height="92" />
+  <text class="heading" x="1160" y="454">ToF acceptance window</text>
+  <text class="text" x="1160" y="478">30 s window; 2 s hand hold</text>
+  <text class="mono" x="1160" y="498">interactionInvitation</text>
+
+  <path class="arrowPurple" d="M 1255 512 L 1255 560" />
+
+  <rect class="outcome" x="885" y="570" width="210" height="105" />
+  <text class="heading" x="910" y="604">Accepted</text>
+  <text class="text" x="910" y="628">Robot-guided break</text>
+  <text class="text" x="910" y="650">FSM movement starts</text>
+
+  <rect class="outcome" x="1142" y="570" width="225" height="105" />
+  <text class="heading" x="1167" y="604">Rejected</text>
+  <text class="text" x="1167" y="628">No active break starts</text>
+  <text class="text" x="1167" y="650">Retry delay is applied</text>
+
+  <path class="dash" d="M 1255 560 C 1180 540, 1075 545, 990 560" />
+  <path class="dash" d="M 1255 560 C 1270 552, 1280 552, 1255 560" />
+
+  <rect class="box" x="970" y="705" width="325" height="65" />
+  <text class="heading" x="995" y="734">Post-break data</text>
+  <text class="text" x="995" y="756">Timer duration, posture, questionnaire, counts</text>
+
+  <!-- Join from shared -->
+  <path class="arrowAmber" d="M 750 280 C 540 280, 280 340, 230 410" />
+  <path class="arrowPurple" d="M 750 280 C 965 280, 950 345, 955 410" />
+</svg>

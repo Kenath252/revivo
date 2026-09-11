@@ -1,0 +1,42 @@
+# Xcode
+DerivedData/
+*.xcworkspace
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+
+# Build products
+build/
+*.app
+*.app.dSYM
+*.ipa
+*.framework
+*.dSYM
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Swift Package Manager
+/.build/
+Package.resolved
+
+# Xcode Scheme files
+*.xcscheme
+
+# macOS system files
+.DS_Store
+*.swp
+
+# Temporary / log files
+*.log
+*.tmp
+*.temp
+
+# IDE files
+.idea/
+.vscode/

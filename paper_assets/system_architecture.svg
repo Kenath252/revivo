@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="950" viewBox="0 0 1500 950" role="img" aria-labelledby="title desc">
+  <title id="title">Revivo system architecture</title>
+  <desc id="desc">Architecture diagram showing Apple Watch sensing and control, iPhone processing and logging, calendar context, ESP32 ToF sensing, and RoArm robot actuation.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .section { font: 700 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #64748b; letter-spacing: .7px; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.7; rx: 14; }
+      .watch { fill: #eff6ff; stroke: #60a5fa; stroke-width: 2; rx: 18; }
+      .phone { fill: #f8fafc; stroke: #475569; stroke-width: 2.4; rx: 28; }
+      .service { fill: #ecfdf5; stroke: #86efac; stroke-width: 1.8; rx: 12; }
+      .robot { fill: #fff7ed; stroke: #fdba74; stroke-width: 2; rx: 14; }
+      .data { fill: #f5f3ff; stroke: #c4b5fd; stroke-width: 1.8; rx: 12; }
+      .context { fill: #fefce8; stroke: #fde047; stroke-width: 1.8; rx: 12; }
+      .heading { font: 700 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+      .text { font: 400 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+      .small { font: 400 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #64748b; }
+      .mono { font: 700 12px "SFMono-Regular", Consolas, monospace; fill: #1e293b; }
+      .arrow { fill: none; stroke: #64748b; stroke-width: 2.5; marker-end: url(#arrow); }
+      .arrowBlue { fill: none; stroke: #2563eb; stroke-width: 2.6; marker-end: url(#arrowBlue); }
+      .arrowGreen { fill: none; stroke: #16a34a; stroke-width: 2.6; marker-end: url(#arrowGreen); }
+      .arrowOrange { fill: none; stroke: #ea580c; stroke-width: 2.6; marker-end: url(#arrowOrange); }
+      .arrowDash { fill: none; stroke: #94a3b8; stroke-width: 2.2; stroke-dasharray: 7 6; marker-end: url(#arrow); }
+      .lane { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.2; rx: 18; }
+      .chip { fill: #0f172a; rx: 7; }
+      .chipText { font: 700 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #ffffff; letter-spacing: .5px; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" /></marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb" /></marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16a34a" /></marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ea580c" /></marker>
+  </defs>
+
+  <rect class="bg" width="1500" height="950" />
+  <text class="title" x="56" y="56">System architecture</text>
+  <text class="subtitle" x="56" y="84">Watch-led sensing/control, iPhone-based detection and logging, and robot/ToF actuation over the RoArm local network.</text>
+
+  <rect class="lane" x="46" y="120" width="310" height="740" />
+  <rect class="lane" x="400" y="120" width="520" height="740" />
+  <rect class="lane" x="965" y="120" width="490" height="740" />
+  <text class="section" x="70" y="150">APPLE WATCH</text>
+  <text class="section" x="424" y="150">IPHONE APPLICATION</text>
+  <text class="section" x="990" y="150">ROBOTIC INTERACTION HARDWARE</text>
+
+  <rect class="watch" x="80" y="190" width="240" height="120" />
+  <text class="heading" x="112" y="226">Physiological sensing</text>
+  <text class="text" x="112" y="251">Heart rate and HRV samples</text>
+  <text class="small" x="112" y="274">Sent to phone for processing</text>
+
+  <rect class="watch" x="80" y="370" width="240" height="130" />
+  <text class="heading" x="112" y="405">Watch interface</text>
+  <text class="text" x="112" y="430">Mode selection</text>
+  <text class="text" x="112" y="452">Break timer display</text>
+  <text class="text" x="112" y="474">Stop / emergency stop</text>
+
+  <rect class="watch" x="80" y="565" width="240" height="115" />
+  <text class="heading" x="112" y="601">WatchConnectivity</text>
+  <text class="text" x="112" y="626">Commands to phone</text>
+  <text class="text" x="112" y="648">Status updates from phone</text>
+
+  <rect class="phone" x="440" y="175" width="440" height="600" />
+  <text class="heading" x="472" y="215">iPhone controller layer</text>
+  <text class="small" x="472" y="238">Central coordinator for recording, detection, mode state, timer state, and robot control</text>
+
+  <rect class="service" x="472" y="270" width="176" height="96" />
+  <text class="heading" x="492" y="302">Heart feature</text>
+  <text class="heading" x="492" y="322">processor</text>
+  <text class="small" x="492" y="346">20 s windows / 10 s step</text>
+
+  <rect class="service" x="672" y="270" width="176" height="96" />
+  <text class="heading" x="692" y="302">Revitalisation</text>
+  <text class="heading" x="692" y="322">detector</text>
+  <text class="small" x="692" y="346">Personalised thresholding</text>
+
+  <rect class="context" x="472" y="405" width="176" height="96" />
+  <text class="heading" x="492" y="438">Desk activity</text>
+  <text class="small" x="492" y="463">Current desk bout</text>
+  <text class="small" x="492" y="482">Working-at-desk gate</text>
+
+  <rect class="context" x="672" y="405" width="176" height="96" />
+  <text class="heading" x="692" y="438">Calendar</text>
+  <text class="heading" x="692" y="458">availability</text>
+  <text class="small" x="692" y="482">Meeting suppression</text>
+
+  <rect class="service" x="472" y="540" width="176" height="96" />
+  <text class="heading" x="492" y="572">Timer and</text>
+  <text class="heading" x="492" y="592">mode state</text>
+  <text class="small" x="492" y="616">Break / desk-bout timing</text>
+
+  <rect class="data" x="672" y="540" width="176" height="96" />
+  <text class="heading" x="692" y="572">Data logger</text>
+  <text class="small" x="692" y="596">StudyRecordings</text>
+  <text class="mono" x="692" y="618">json / jsonl</text>
+
+  <rect class="service" x="472" y="675" width="376" height="72" />
+  <text class="heading" x="492" y="706">PhoneWCManager</text>
+  <text class="small" x="492" y="729">Synchronises watch commands and status; routes mode-specific events</text>
+
+  <rect class="robot" x="1000" y="185" width="400" height="115" />
+  <text class="heading" x="1032" y="222">RoArm robot</text>
+  <text class="text" x="1032" y="247">Receives HTTP movement commands</text>
+  <text class="mono" x="1032" y="270">GUARD, PRE_PUNCH, PUNCH, HOOK, DODGE</text>
+
+  <rect class="robot" x="1000" y="350" width="400" height="115" />
+  <text class="heading" x="1032" y="386">ESP32 + ToF sensor</text>
+  <text class="text" x="1032" y="411">Detects hand/object during invitation</text>
+  <text class="mono" x="1032" y="434">tof0:true/false payload stream</text>
+
+  <rect class="robot" x="1000" y="515" width="400" height="115" />
+  <text class="heading" x="1032" y="552">Local RoArm Wi-Fi network</text>
+  <text class="text" x="1032" y="577">Phone, robot, and ESP32 communicate</text>
+  <text class="small" x="1032" y="600">Robot HTTP + ESP32 TCP sensor stream</text>
+
+  <rect class="data" x="1000" y="690" width="400" height="110" />
+  <text class="heading" x="1032" y="726">Exported study data</text>
+  <text class="text" x="1032" y="751">Heart features, events, questionnaires,</text>
+  <text class="text" x="1032" y="773">daily summaries, baseline profile</text>
+
+  <path class="arrowBlue" d="M 320 245 C 374 245, 393 318, 462 318" />
+  <text class="small" x="338" y="238">HR / HRV</text>
+  <path class="arrowBlue" d="M 320 435 C 372 435, 385 712, 462 712" />
+  <text class="small" x="338" y="456">mode commands</text>
+  <path class="arrowBlue" d="M 672 704 C 565 820, 286 736, 202 690" />
+  <text class="small" x="425" y="810">timer/status sync</text>
+
+  <path class="arrow" d="M 648 318 L 662 318" />
+  <path class="arrow" d="M 760 366 L 760 395" />
+  <path class="arrow" d="M 648 453 L 662 453" />
+  <path class="arrow" d="M 760 501 L 760 530" />
+  <path class="arrowGreen" d="M 760 366 C 878 360, 908 250, 990 242" />
+  <text class="small" x="854" y="275">robot commands</text>
+  <path class="arrowOrange" d="M 1000 407 C 914 407, 902 454, 858 454" />
+  <text class="small" x="880" y="397">ToF acceptance</text>
+  <path class="arrowDash" d="M 760 636 C 870 678, 890 726, 990 746" />
+</svg>
